@@ -1,9 +1,46 @@
-[gd_scene load_steps=2 format=3 uid="uid://c13gk07m8ijaw"]
+[gd_scene load_steps=7 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
 
+[sub_resource type="GDScript" id="GDScript_tnjs7"]
+script/source = "extends Node3D
+
+func move() -> void:
+	$AnimationTree[\"parameters/Blend/blend_amount\"] = 0
+func idle() -> void:
+	$AnimationTree[\"parameters/Blend/blend_amount\"] = 1
+"
+
+[sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_i6yce"]
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_172as"]
+animation = &"SlimeIdle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_c6paj"]
+animation = &"Movement"
+
+[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_w14uk"]
+graph_offset = Vector2(-423.333, 6.66667)
+nodes/Blend/node = SubResource("AnimationNodeBlend2_i6yce")
+nodes/Blend/position = Vector2(93.3333, 146.667)
+nodes/Idle/node = SubResource("AnimationNodeAnimation_172as")
+nodes/Idle/position = Vector2(-226.667, 253.333)
+nodes/Move/node = SubResource("AnimationNodeAnimation_c6paj")
+nodes/Move/position = Vector2(-226.667, 80)
+node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"Blend"]
+
 [node name="Slime" instance=ExtResource("1_lgbos")]
+script = SubResource("GDScript_tnjs7")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/2/position = Vector3(2.84298e-16, 1.29464, -0.0537132)
-bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
+bones/1/position = Vector3(0, 0.411728, 0)
+bones/2/position = Vector3(3.13946e-16, 1.19329, -0.499718)
+bones/2/rotation = Quaternion(-0.390555, 1.43676e-17, 8.78512e-17, 0.92058)
+bones/2/scale = Vector3(1.03359, 1.03359, 1.03359)
+bones/3/rotation = Quaternion(-0.0736222, -3.7677e-26, 1.34796e-17, 0.997286)
+bones/3/scale = Vector3(0.738507, 1.27573, 0.744428)
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource("AnimationNodeBlendTree_w14uk")
+anim_player = NodePath("../AnimationPlayer")
+parameters/Blend/blend_amount = 0.0

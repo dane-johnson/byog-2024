@@ -47,3 +47,4 @@ size = Vector3(95.6193, 0.484375, 89.603)
 material = SubResource("StandardMaterial3D_hcrsa")
 
 [node name="PlayerRig" parent="." instance=ExtResource("1_rgvac")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13389, 0)
