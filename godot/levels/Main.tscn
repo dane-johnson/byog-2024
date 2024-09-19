@@ -15,11 +15,6 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 
-[node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(0.939693, -0.330366, 0.0885213, 0, 0.258819, 0.965926, -0.34202, -0.907673, 0.24321, 2, 10, 4)
-projection = 1
-size = 10.0
-
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.31793)
 size = Vector3(95.6193, 0.484375, 89.603)
@@ -40,3 +35,10 @@ directional_shadow_split_3 = 0.655
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ok4j")
+
+[node name="CameraTgt" type="Node3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="CameraTgt"]
+transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 3.96045, 10, 5.12976)
+projection = 1
+size = 10.0
