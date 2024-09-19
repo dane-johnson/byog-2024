@@ -37,7 +37,7 @@ directional_shadow_split_3 = 0.655
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.31793)
 use_collision = true
-collision_mask = 0
+collision_layer = 0
 size = Vector3(95.6193, 0.484375, 89.603)
 
 [node name="SizeReference" type="MeshInstance3D" parent="."]
@@ -53,8 +53,9 @@ size = 10.0
 
 [node name="CharacterBody3D" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3703, 0)
-collision_layer = 2
+collision_mask = 0
 script = ExtResource("1_cc7yq")
+speed = null
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
 shape = SubResource("CapsuleShape3D_b8dhe")
