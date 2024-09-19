@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="Texture2D" uid="uid://dwrcntji17wd" path="res://misc/Rock1Seamless_0.png" id="1_kv12i"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="1_rgvac"]
+[ext_resource type="PackedScene" uid="uid://ckaeadn7ap6la" path="res://misc/Rock.glb" id="3_h8nuc"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
 use_debanding = false
@@ -42,3 +43,6 @@ material = SubResource("StandardMaterial3D_hcrsa")
 
 [node name="PlayerRig" parent="." instance=ExtResource("1_rgvac")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13389, 0)
+
+[node name="Rock" parent="." instance=ExtResource("3_h8nuc")]
+transform = Transform3D(0.954407, 0, 9.6658, 0, 5.14624, 0, -2.10779, 0, 4.37667, -5.08418, 1.03563, 13.4827)

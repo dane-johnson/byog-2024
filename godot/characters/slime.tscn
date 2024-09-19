@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c13gk07m8ijaw"]
+[gd_scene load_steps=15 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
 [ext_resource type="Script" path="res://characters/slime.gd" id="2_174hs"]
@@ -6,14 +6,9 @@
 [sub_resource type="Gradient" id="Gradient_chkps"]
 colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
 
-[sub_resource type="FastNoiseLite" id="FastNoiseLite_ab5rs"]
-noise_type = 2
-frequency = 0.064
-
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_reilq"]
 height = 167
 color_ramp = SubResource("Gradient_chkps")
-noise = SubResource("FastNoiseLite_ab5rs")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iudju"]
 transparency = 4
@@ -90,12 +85,12 @@ node_connections = [&"output", 0, &"Bubble"]
 script = ExtResource("2_174hs")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(0, -0.0117528, 0)
-bones/2/position = Vector3(3.26616e-16, 1.12941, -0.137659)
-bones/2/rotation = Quaternion(-0.126017, 2.15151e-17, 7.78292e-17, 0.992028)
-bones/2/scale = Vector3(1.11036, 1.11036, 1.11036)
-bones/3/rotation = Quaternion(-0.032262, 0, 1.32242e-17, 0.99948)
-bones/3/scale = Vector3(1.06644, 0.888153, 1.09171)
+bones/1/position = Vector3(0, -0.00177332, 0)
+bones/2/position = Vector3(2.88902e-16, 1.10504, -0.0522724)
+bones/2/rotation = Quaternion(-0.0564909, 1.29154e-17, 1.27879e-17, 0.998403)
+bones/2/scale = Vector3(0.99639, 0.996389, 0.996389)
+bones/3/rotation = Quaternion(0.00165174, 0, 0, 0.999999)
+bones/3/scale = Vector3(1.00761, 0.987183, 1.01051)
 
 [node name="Cube" parent="Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
