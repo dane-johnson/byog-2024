@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=10 format=3 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="Script" path="res://controllers/character_controller.gd" id="1_cc7yq"]
 
@@ -12,6 +12,17 @@ sky_material = SubResource("ProceduralSkyMaterial_tcorm")
 background_mode = 2
 sky = SubResource("Sky_blei7")
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="Gradient" id="Gradient_te3kf"]
+offsets = PackedFloat32Array(0, 0.258706, 0.646766, 1)
+colors = PackedColorArray(1, 0, 0, 1, 0.937639, 0.761157, 0, 1, 0, 0.395666, 4.81307e-07, 1, 0, 0, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_flpr4"]
+gradient = SubResource("Gradient_te3kf")
+fill_from = Vector2(0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcrsa"]
+albedo_texture = SubResource("GradientTexture2D_flpr4")
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b8dhe"]
 
@@ -37,6 +48,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.3179
 use_collision = true
 collision_mask = 0
 size = Vector3(95.6193, 0.484375, 89.603)
+material = SubResource("StandardMaterial3D_hcrsa")
 
 [node name="Player" type="CharacterBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984375, 0)
@@ -50,8 +62,13 @@ shape = SubResource("CapsuleShape3D_b8dhe")
 [node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
 mesh = SubResource("CapsuleMesh_q86rp")
 
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player"]
+remote_path = NodePath("../../CameraTgt")
+update_rotation = false
+update_scale = false
+
 [node name="CameraTgt" type="Node3D" parent="."]
-transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 0, 0, 0)
+transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 0, 0.984375, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraTgt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -5.96046e-08, 2.98023e-08, 1, -0.545667, 0.736429, 11.8811)
