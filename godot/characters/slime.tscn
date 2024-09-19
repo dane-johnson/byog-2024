@@ -5,5 +5,5 @@
 [node name="Slime" instance=ExtResource("1_lgbos")]
 
 [node name="Skeleton3D" parent="." index="0"]
+bones/2/position = Vector3(2.84298e-16, 1.29464, -0.0537132)
 bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
-bones/2/scale = Vector3(1, 1, 1)
