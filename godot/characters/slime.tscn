@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://da78ylmpan2d5"]
+
+[ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
+
+[node name="Slime" instance=ExtResource("1_lgbos")]
