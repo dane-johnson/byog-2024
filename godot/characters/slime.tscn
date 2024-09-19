@@ -1,15 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://c13gk07m8ijaw"]
+[gd_scene load_steps=11 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
 
 [sub_resource type="GDScript" id="GDScript_tnjs7"]
 script/source = "extends Node3D
 
+func _process(delta: float) -> void:
+	$Skeleton3D/Cube.get_surface_override_material(0)[\"albedo_texture\"].noise.offset.y += delta * 10
+
 func move() -> void:
 	$AnimationTree[\"parameters/Blend/blend_amount\"] = 0
 func idle() -> void:
 	$AnimationTree[\"parameters/Blend/blend_amount\"] = 1
 "
+
+[sub_resource type="Gradient" id="Gradient_chkps"]
+colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_ab5rs"]
+noise_type = 2
+frequency = 0.064
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_reilq"]
+height = 167
+color_ramp = SubResource("Gradient_chkps")
+noise = SubResource("FastNoiseLite_ab5rs")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_iudju"]
+transparency = 4
+albedo_color = Color(0.287251, 0.000994429, 0.524414, 1)
+albedo_texture = SubResource("NoiseTexture2D_reilq")
 
 [sub_resource type="AnimationNodeBlend2" id="AnimationNodeBlend2_i6yce"]
 
@@ -33,12 +53,15 @@ node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"
 script = SubResource("GDScript_tnjs7")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(0, -0.012612, 0)
-bones/2/position = Vector3(2.88941e-16, 1.28091, -0.0289179)
-bones/2/rotation = Quaternion(0.0426905, 1.29947e-17, -6.81235e-18, 0.999088)
-bones/2/scale = Vector3(0.929989, 0.929989, 0.929989)
-bones/3/rotation = Quaternion(0.0530597, -2.77069e-25, -9.96328e-18, 0.998591)
-bones/3/scale = Vector3(1.14112, 0.75554, 1.19975)
+bones/1/position = Vector3(0, -0.0217501, 0)
+bones/2/position = Vector3(3.38442e-16, 1.15115, -0.206286)
+bones/2/rotation = Quaternion(-0.178519, 2.41318e-17, 1.0108e-16, 0.983937)
+bones/2/scale = Vector3(1.18166, 1.18166, 1.18166)
+bones/3/rotation = Quaternion(-0.053089, 0, 1.78491e-17, 0.99859)
+bones/3/scale = Vector3(1.10936, 0.815895, 1.15096)
+
+[node name="Cube" parent="Skeleton3D" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_w14uk")
