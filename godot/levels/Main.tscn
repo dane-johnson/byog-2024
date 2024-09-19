@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
 
-[ext_resource type="Script" path="res://controllers/character_controller.gd" id="1_cc7yq"]
+[ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="1_rgvac"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
 use_debanding = false
@@ -24,10 +24,6 @@ fill_from = Vector2(0, 1)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcrsa"]
 albedo_texture = SubResource("GradientTexture2D_flpr4")
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b8dhe"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_q86rp"]
-
 [node name="World" type="Node3D"]
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
@@ -50,28 +46,4 @@ collision_mask = 0
 size = Vector3(95.6193, 0.484375, 89.603)
 material = SubResource("StandardMaterial3D_hcrsa")
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984375, 0)
-collision_layer = 2
-script = ExtResource("1_cc7yq")
-speed = 10.0
-camera_rig_path = NodePath("../CameraTgt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_b8dhe")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_q86rp")
-
-[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player"]
-remote_path = NodePath("../../CameraTgt")
-update_rotation = false
-update_scale = false
-
-[node name="CameraTgt" type="Node3D" parent="."]
-transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 0, 0.984375, 0)
-
-[node name="Camera3D" type="Camera3D" parent="CameraTgt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -5.96046e-08, 2.98023e-08, 1, -0.545667, 0.736429, 11.8811)
-projection = 1
-size = 10.0
+[node name="PlayerRig" parent="." instance=ExtResource("1_rgvac")]

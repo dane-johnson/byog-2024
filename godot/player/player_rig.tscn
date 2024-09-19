@@ -1,0 +1,36 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmf7vjtvb6jc8"]
+
+[ext_resource type="Script" path="res://controllers/character_controller.gd" id="1_s0gui"]
+[ext_resource type="PackedScene" uid="uid://c13gk07m8ijaw" path="res://characters/slime.tscn" id="2_pac81"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_dyxmq"]
+height = 1.66283
+radius = 1.34546
+
+[node name="PlayerRig" type="Node3D"]
+
+[node name="Player" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984375, 0)
+collision_layer = 2
+script = ExtResource("1_s0gui")
+speed = 10.0
+camera_rig_path = NodePath("../CameraTgt")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.965302, 0)
+shape = SubResource("CylinderShape3D_dyxmq")
+
+[node name="RemoteTransform3D" type="RemoteTransform3D" parent="Player"]
+remote_path = NodePath("../../CameraTgt")
+update_rotation = false
+update_scale = false
+
+[node name="Slime" parent="Player" instance=ExtResource("2_pac81")]
+
+[node name="CameraTgt" type="Node3D" parent="."]
+transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 0, 0.984375, 0)
+
+[node name="Camera3D" type="Camera3D" parent="CameraTgt"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, -5.96046e-08, 2.98023e-08, 1, -0.545667, 0.736429, 11.8811)
+projection = 1
+size = 10.0
