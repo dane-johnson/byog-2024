@@ -1,5 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://da78ylmpan2d5"]
+[gd_scene load_steps=2 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
 
 [node name="Slime" instance=ExtResource("1_lgbos")]
+
+[node name="Skeleton3D" parent="." index="0"]
+bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
+bones/2/scale = Vector3(1, 1, 1)
