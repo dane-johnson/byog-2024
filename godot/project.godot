@@ -15,6 +15,10 @@ run/main_scene="res://levels/Main.tscn"
 config/features=PackedStringArray("4.3", "Mobile")
 config/icon="res://icon.svg"
 
+[physics]
+
+common/physics_ticks_per_second=30
+
 [rendering]
 
 renderer/rendering_method="mobile"
