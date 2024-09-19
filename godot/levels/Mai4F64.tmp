@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="Script" path="res://controllers/character_controller.gd" id="1_cc7yq"]
 
@@ -12,6 +12,8 @@ sky_material = SubResource("ProceduralSkyMaterial_tcorm")
 background_mode = 2
 sky = SubResource("Sky_blei7")
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_xuolb"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_b8dhe"]
 
@@ -35,25 +37,28 @@ directional_shadow_split_3 = 0.655
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.31793)
 use_collision = true
-collision_mask = 0
+collision_layer = 0
 size = Vector3(95.6193, 0.484375, 89.603)
 
-[node name="Player" type="CharacterBody3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.984375, 0)
-collision_layer = 2
-script = ExtResource("1_cc7yq")
-camera_rig_path = NodePath("../CameraTgt")
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Player"]
-shape = SubResource("CapsuleShape3D_b8dhe")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="Player"]
-mesh = SubResource("CapsuleMesh_q86rp")
+[node name="SizeReference" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+mesh = SubResource("CapsuleMesh_xuolb")
 
 [node name="CameraTgt" type="Node3D" parent="."]
-transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CameraTgt"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, -5.96046e-08, 2.98023e-08, 1, -0.545667, 0.736429, 11.8811)
+transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0.67559, -0.59343, 0.437514, 3.96045, 10, 5.12976)
 projection = 1
 size = 10.0
+
+[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.3703, 0)
+collision_mask = 0
+script = ExtResource("1_cc7yq")
+speed = null
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+shape = SubResource("CapsuleShape3D_b8dhe")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+mesh = SubResource("CapsuleMesh_q86rp")
