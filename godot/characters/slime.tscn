@@ -1,18 +1,7 @@
 [gd_scene load_steps=11 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
-
-[sub_resource type="GDScript" id="GDScript_tnjs7"]
-script/source = "extends Node3D
-
-func _process(delta: float) -> void:
-	$Skeleton3D/Cube.get_surface_override_material(0)[\"albedo_texture\"].noise.offset.y += delta * 10
-
-func move() -> void:
-	$AnimationTree[\"parameters/Blend/blend_amount\"] = 0
-func idle() -> void:
-	$AnimationTree[\"parameters/Blend/blend_amount\"] = 1
-"
+[ext_resource type="Script" path="res://characters/slime.gd" id="2_174hs"]
 
 [sub_resource type="Gradient" id="Gradient_chkps"]
 colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
@@ -50,15 +39,15 @@ nodes/Move/position = Vector2(-226.667, 80)
 node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"Blend"]
 
 [node name="Slime" instance=ExtResource("1_lgbos")]
-script = SubResource("GDScript_tnjs7")
+script = ExtResource("2_174hs")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(0, -0.0217501, 0)
-bones/2/position = Vector3(3.38442e-16, 1.15115, -0.206286)
-bones/2/rotation = Quaternion(-0.178519, 2.41318e-17, 1.0108e-16, 0.983937)
-bones/2/scale = Vector3(1.18166, 1.18166, 1.18166)
-bones/3/rotation = Quaternion(-0.053089, 0, 1.78491e-17, 0.99859)
-bones/3/scale = Vector3(1.10936, 0.815895, 1.15096)
+bones/1/position = Vector3(0, -0.0112673, 0)
+bones/2/position = Vector3(3.36376e-16, 1.19186, -0.374178)
+bones/2/rotation = Quaternion(-0.304281, 2.24049e-17, 1.09575e-16, 0.952582)
+bones/2/scale = Vector3(1.29507, 1.29507, 1.29507)
+bones/3/rotation = Quaternion(-0.0899961, 1.03812e-26, 1.96876e-17, 0.995942)
+bones/3/scale = Vector3(1.1408, 0.727784, 1.2056)
 
 [node name="Cube" parent="Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
