@@ -1,6 +1,17 @@
-[gd_scene load_steps=2 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=5 format=3 uid="uid://chujotv2ya5ia"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_xuolb"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
+use_debanding = false
+
+[sub_resource type="Sky" id="Sky_blei7"]
+sky_material = SubResource("ProceduralSkyMaterial_tcorm")
+
+[sub_resource type="Environment" id="Environment_7ok4j"]
+background_mode = 2
+sky = SubResource("Sky_blei7")
+ambient_light_color = Color(1, 1, 1, 1)
 
 [node name="World" type="Node3D"]
 
@@ -10,8 +21,8 @@ projection = 1
 size = 10.0
 
 [node name="Ground" type="CSGBox3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -20.9677, -0.257812, -3.84062)
-size = Vector3(131.833, 0.484375, 94.6484)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.31793)
+size = Vector3(95.6193, 0.484375, 89.603)
 
 [node name="SizeReference" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
@@ -19,10 +30,13 @@ mesh = SubResource("CapsuleMesh_xuolb")
 
 [node name="Sun" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.888222, -0.45821, 0.0332378, 0.394979, 0.798594, 0.454136, -0.234633, -0.390245, 0.890312, 0, 40.8759, 0)
-light_energy = 1.33
+light_energy = 1.5
 shadow_enabled = true
 shadow_opacity = 0.95
 shadow_blur = 2.885
 directional_shadow_split_1 = 0.008
 directional_shadow_split_2 = 0.252
 directional_shadow_split_3 = 0.655
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7ok4j")
