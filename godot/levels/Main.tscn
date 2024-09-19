@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=7 format=3 uid="uid://chujotv2ya5ia"]
 
+[ext_resource type="Texture2D" uid="uid://dwrcntji17wd" path="res://misc/Rock1Seamless_0.png" id="1_kv12i"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="1_rgvac"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
@@ -13,16 +14,9 @@ background_mode = 2
 sky = SubResource("Sky_blei7")
 ambient_light_color = Color(1, 1, 1, 1)
 
-[sub_resource type="Gradient" id="Gradient_te3kf"]
-offsets = PackedFloat32Array(0, 0.258706, 0.646766, 1)
-colors = PackedColorArray(1, 0, 0, 1, 0.937639, 0.761157, 0, 1, 0, 0.395666, 4.81307e-07, 1, 0, 0, 1, 1)
-
-[sub_resource type="GradientTexture2D" id="GradientTexture2D_flpr4"]
-gradient = SubResource("Gradient_te3kf")
-fill_from = Vector2(0, 1)
-
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcrsa"]
-albedo_texture = SubResource("GradientTexture2D_flpr4")
+albedo_texture = ExtResource("1_kv12i")
+uv1_scale = Vector3(10.855, 10.855, 10.855)
 
 [node name="World" type="Node3D"]
 

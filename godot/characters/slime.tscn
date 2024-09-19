@@ -33,12 +33,12 @@ node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"
 script = SubResource("GDScript_tnjs7")
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(0, 0.411728, 0)
-bones/2/position = Vector3(3.13946e-16, 1.19329, -0.499718)
-bones/2/rotation = Quaternion(-0.390555, 1.43676e-17, 8.78512e-17, 0.92058)
-bones/2/scale = Vector3(1.03359, 1.03359, 1.03359)
-bones/3/rotation = Quaternion(-0.0736222, -3.7677e-26, 1.34796e-17, 0.997286)
-bones/3/scale = Vector3(0.738507, 1.27573, 0.744428)
+bones/1/position = Vector3(0, -0.012612, 0)
+bones/2/position = Vector3(2.88941e-16, 1.28091, -0.0289179)
+bones/2/rotation = Quaternion(0.0426905, 1.29947e-17, -6.81235e-18, 0.999088)
+bones/2/scale = Vector3(0.929989, 0.929989, 0.929989)
+bones/3/rotation = Quaternion(0.0530597, -2.77069e-25, -9.96328e-18, 0.998591)
+bones/3/scale = Vector3(1.14112, 0.75554, 1.19975)
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_w14uk")
