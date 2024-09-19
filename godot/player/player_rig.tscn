@@ -33,4 +33,4 @@ transform = Transform3D(0.737277, -0.543778, 0.400908, 0, 0.593419, 0.804894, -0
 [node name="Camera3D" type="Camera3D" parent="CameraTgt"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, -5.96046e-08, 2.98023e-08, 1, -0.545667, 0.736429, 11.8811)
 projection = 1
-size = 10.0
+size = 27.204
