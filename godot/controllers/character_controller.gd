@@ -32,3 +32,6 @@ func get_camera_direction() -> Basis:
 		return Basis.from_euler(Vector3.UP * camera_rig.rotation.y)
 	else:
 		return Basis.IDENTITY
+		
+func heat_up():
+	$Slime.heat_up()

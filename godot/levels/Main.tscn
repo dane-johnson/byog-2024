@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://levels/first_room.tscn" id="2_gb8f8"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="3_houcx"]
+[ext_resource type="Script" path="res://triggers/hot_zone.gd" id="3_uf3sf"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
 use_debanding = false
@@ -12,6 +13,9 @@ sky_material = SubResource("ProceduralSkyMaterial_tcorm")
 [sub_resource type="Environment" id="Environment_7ok4j"]
 sky = SubResource("Sky_blei7")
 ambient_light_color = Color(1, 1, 1, 1)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_vwqla"]
+size = Vector3(14.7021, 8.37, 15.4965)
 
 [node name="World" type="Node3D"]
 
@@ -65,3 +69,25 @@ light_energy = 10.0
 light_bake_mode = 1
 shadow_enabled = true
 omni_range = 24.3387
+
+[node name="Triggers" type="Node3D" parent="."]
+
+[node name="HotZone" type="Area3D" parent="Triggers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.365, 0, 9.60537)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_uf3sf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/HotZone"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14786, 3.685, 1.31476)
+shape = SubResource("BoxShape3D_vwqla")
+
+[node name="HotZone2" type="Area3D" parent="Triggers"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.3574, 0, -35.2762)
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("3_uf3sf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/HotZone2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14786, 3.685, 1.31476)
+shape = SubResource("BoxShape3D_vwqla")
