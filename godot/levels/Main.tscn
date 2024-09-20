@@ -27,9 +27,10 @@ environment = SubResource("Environment_7ok4j")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13389, 0)
 
 [node name="FirstRoom" parent="." instance=ExtResource("2_gb8f8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 0, 4)
+transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.811479, 0, -0.72888, 0, 0.0221312, 8.23622, 0.17127, 0.943399)
 
 [node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.811479, 0, -0.72888, 0, 0.0221312, 5.58731, 0.17127, 1.58375)
 
 [node name="Torch" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50688, 0)
@@ -72,6 +73,7 @@ shadow_enabled = true
 omni_range = 24.3387
 
 [node name="Triggers" type="Node3D" parent="."]
+transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.811479, 0, -0.72888, 0, 0.0221312, 5.58731, 0.17127, 1.58375)
 
 [node name="HotZone" type="Area3D" parent="Triggers"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -22.365, 0, 9.60537)
@@ -94,7 +96,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14786, 3.685, 1.31476)
 shape = SubResource("BoxShape3D_vwqla")
 
 [node name="Stalagmite" parent="." instance=ExtResource("4_d1vf4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5921, 2.27124, -10.8791)
+transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.69412, 0, -0.72888, 0, 0.0221312, 0.887263, 1.56056, -35.7049)
 
 [node name="Stalagmite2" parent="." instance=ExtResource("4_d1vf4")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5921, 2.27124, -2.18633)
+transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.69412, 0, -0.72888, 0, 0.0221312, 6.59042, 1.56056, -35.5126)
