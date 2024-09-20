@@ -1,0 +1,24 @@
+[gd_scene load_steps=4 format=3 uid="uid://dofw2aa5ufmyt"]
+
+[ext_resource type="PackedScene" uid="uid://gposi8e81qpw" path="res://props/assets/Stalagmite.glb" id="1_60fjh"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6bj4"]
+transparency = 4
+albedo_color = Color(0.686275, 1, 1, 1)
+clearcoat_enabled = true
+clearcoat_roughness = 0.32
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_d81fq"]
+height = 7.40409
+radius = 1.0132
+
+[node name="Stalagmite" instance=ExtResource("1_60fjh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38403, 0)
+
+[node name="Cube" parent="." index="0"]
+transform = Transform3D(3.3708, 0, 0, 0, 3.3708, 0, 0, 0, 3.3708, 0, 1, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_g6bj4")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
+transform = Transform3D(3.3708, 0, 0, 0, 3.3708, 0, 0, 0, 3.3708, 0, 9.77847, 0)
+shape = SubResource("CylinderShape3D_d81fq")

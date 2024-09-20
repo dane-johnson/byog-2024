@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c13gk07m8ijaw" path="res://characters/slime.tscn" id="2_pac81"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_c0qch"]
-radius = 1.60575
+radius = 1.60574
 height = 3.21149
 
 [node name="PlayerRig" type="Node3D"]

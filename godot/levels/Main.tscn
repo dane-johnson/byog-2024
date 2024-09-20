@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=9 format=3 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://levels/first_room.tscn" id="2_gb8f8"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="3_houcx"]
 [ext_resource type="Script" path="res://triggers/hot_zone.gd" id="3_uf3sf"]
+[ext_resource type="PackedScene" uid="uid://dofw2aa5ufmyt" path="res://props/stalagmite.tscn" id="4_d1vf4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
 use_debanding = false
@@ -91,3 +92,9 @@ script = ExtResource("3_uf3sf")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/HotZone2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.14786, 3.685, 1.31476)
 shape = SubResource("BoxShape3D_vwqla")
+
+[node name="Stalagmite" parent="." instance=ExtResource("4_d1vf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5921, 2.27124, -10.8791)
+
+[node name="Stalagmite2" parent="." instance=ExtResource("4_d1vf4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.5921, 2.27124, -2.18633)
