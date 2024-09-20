@@ -12,7 +12,6 @@ use_debanding = false
 sky_material = SubResource("ProceduralSkyMaterial_tcorm")
 
 [sub_resource type="Environment" id="Environment_7ok4j"]
-background_mode = 2
 sky = SubResource("Sky_blei7")
 ambient_light_color = Color(1, 1, 1, 1)
 
@@ -68,16 +67,6 @@ roughness = 0.0
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ok4j")
 
-[node name="Sun" type="DirectionalLight3D" parent="."]
-transform = Transform3D(0.888222, -0.45821, 0.0332379, 0.394979, 0.798594, 0.454136, -0.234633, -0.390245, 0.890312, 0, 40.8759, 0)
-light_energy = 1.5
-shadow_enabled = true
-shadow_opacity = 0.95
-shadow_blur = 2.885
-directional_shadow_split_1 = 0.008
-directional_shadow_split_2 = 0.252
-directional_shadow_split_3 = 0.655
-
 [node name="Ground" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.646349, -0.257812, -1.31793)
 use_collision = true
@@ -104,3 +93,11 @@ transform = Transform3D(2.31352, 0, 0.165923, 0, 5.14624, 0, -0.0361816, 0, 10.6
 mesh = SubResource("ArrayMesh_65ntf")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_gbcv3")
+
+[node name="Torch" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.50688, 0)
+light_color = Color(1, 0.736, 0.56, 1)
+light_energy = 10.0
+light_bake_mode = 1
+shadow_enabled = true
+omni_range = 24.3387
