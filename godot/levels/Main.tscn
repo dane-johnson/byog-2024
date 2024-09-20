@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=4 uid="uid://chujotv2ya5ia"]
+[gd_scene load_steps=14 format=4 uid="uid://chujotv2ya5ia"]
 
 [ext_resource type="Texture2D" uid="uid://dwrcntji17wd" path="res://misc/Rock1Seamless_0.png" id="1_kv12i"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="1_rgvac"]
+[ext_resource type="Texture2D" uid="uid://wvh3t0dpibt5" path="res://misc/NormalMap.png" id="2_ly1y4"]
 [ext_resource type="PackedScene" uid="uid://ckaeadn7ap6la" path="res://misc/Rock.glb" id="3_h8nuc"]
 [ext_resource type="Texture2D" uid="uid://dgkpruu308wqc" path="res://misc/Rock_stony_tiled.png" id="4_aappc"]
 
@@ -17,6 +18,9 @@ ambient_light_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hcrsa"]
 albedo_texture = ExtResource("1_kv12i")
+normal_enabled = true
+normal_scale = 2.5
+normal_texture = ExtResource("2_ly1y4")
 uv1_scale = Vector3(10.855, 10.855, 10.855)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_vyn27"]

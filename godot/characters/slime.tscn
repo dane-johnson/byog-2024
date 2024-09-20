@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c13gk07m8ijaw"]
+[gd_scene load_steps=11 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://characters/assets/SlimeSama.glb" id="1_lgbos"]
 [ext_resource type="Script" path="res://characters/slime.gd" id="2_174hs"]
@@ -9,6 +9,7 @@ colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ca27x"]
 noise_type = 2
 frequency = 0.0428
+offset = Vector3(0, 992.842, 0)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_reilq"]
 height = 167
@@ -29,7 +30,7 @@ animation = &"SlimeIdle"
 animation = &"Movement"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_w14uk"]
-graph_offset = Vector2(-423.333, 6.66667)
+graph_offset = Vector2(-446, 34.6667)
 nodes/Blend/node = SubResource("AnimationNodeBlend2_i6yce")
 nodes/Blend/position = Vector2(93.3333, 146.667)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_172as")
@@ -38,64 +39,17 @@ nodes/Move/node = SubResource("AnimationNodeAnimation_c6paj")
 nodes/Move/position = Vector2(-226.667, 80)
 node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"Blend"]
 
-[sub_resource type="Animation" id="Animation_tjoir"]
-resource_name = "Pulse"
-length = 200.0
-loop_mode = 1
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton3D/Cube:surface_material_override/0:albedo_texture:noise:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(1, 200),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector3(0, 1000, 0), Vector3(0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_aqje5"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Skeleton3D/Cube:surface_material_override/0:albedo_texture:noise:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Vector3(0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_0pnd7"]
-_data = {
-"Pulse": SubResource("Animation_tjoir"),
-"RESET": SubResource("Animation_aqje5")
-}
-
-[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_oebo1"]
-animation = &"Pulse"
-
-[sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_ud8ok"]
-graph_offset = Vector2(-514.667, -24.27)
-nodes/Bubble/node = SubResource("AnimationNodeAnimation_oebo1")
-nodes/Bubble/position = Vector2(-13.3333, 80)
-nodes/output/position = Vector2(173.333, 93.3333)
-node_connections = [&"output", 0, &"Bubble"]
-
 [node name="Slime" instance=ExtResource("1_lgbos")]
 script = ExtResource("2_174hs")
+hot_color = Color(1, 0, 0, 1)
 
 [node name="Skeleton3D" parent="." index="0"]
-bones/1/position = Vector3(0, 0.509188, 0)
-bones/2/position = Vector3(2.88031e-16, 1.14455, -0.42121)
-bones/2/rotation = Quaternion(-0.232785, 1.19416e-17, 3.92569e-17, 0.972528)
-bones/2/scale = Vector3(1.32612, 1.32612, 1.32612)
-bones/3/rotation = Quaternion(0.0534723, -2.2473e-27, -1.39909e-17, 0.998569)
-bones/3/scale = Vector3(0.725523, 1.42503, 0.734503)
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+bones/1/position = Vector3(0, -0.00986532, 0)
+bones/2/position = Vector3(0.00427308, 1.29464, -0.0537132)
+bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
+bones/3/rotation = Quaternion(0.000118345, 9.35169e-05, 0.00448447, 0.99999)
+bones/3/scale = Vector3(1.03269, 0.907429, 1.05781)
 
 [node name="Cube" parent="Skeleton3D" index="0"]
 surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
@@ -103,14 +57,4 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
 tree_root = SubResource("AnimationNodeBlendTree_w14uk")
 anim_player = NodePath("../AnimationPlayer")
-parameters/Blend/blend_amount = 0.0
-
-[node name="EffectAnimationPlayer" type="AnimationPlayer" parent="." index="3"]
-libraries = {
-"": SubResource("AnimationLibrary_0pnd7")
-}
-autoplay = "Pulse"
-
-[node name="EffectAnimationTree" type="AnimationTree" parent="." index="4"]
-tree_root = SubResource("AnimationNodeBlendTree_ud8ok")
-anim_player = NodePath("../EffectAnimationPlayer")
+parameters/Blend/blend_amount = 1.0
