@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsn8e6k2iyste"]
 
-[ext_resource type="Script" path="res://levels/main.gd" id="1_udnma"]
-[ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://levels/first_room.tscn" id="2_gb8f8"]
-[ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="3_houcx"]
-[ext_resource type="PackedScene" uid="uid://dofw2aa5ufmyt" path="res://props/stalagmite.tscn" id="4_d1vf4"]
+[ext_resource type="Script" path="res://levels/main.gd" id="1_pjcw3"]
+[ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="2_28uya"]
+[ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://levels/first_room.tscn" id="3_7bs5w"]
+[ext_resource type="PackedScene" uid="uid://dofw2aa5ufmyt" path="res://props/stalagmite.tscn" id="4_sahks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]
 use_debanding = false
@@ -22,21 +22,21 @@ size = Vector3(14.7021, 8.37, 15.4965)
 size = Vector3(4.2334, 11.4777, 16.1746)
 
 [node name="Level1" type="Node3D"]
-script = ExtResource("1_udnma")
+script = ExtResource("1_pjcw3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ok4j")
 
-[node name="PlayerRig" parent="." instance=ExtResource("3_houcx")]
+[node name="PlayerRig" parent="." instance=ExtResource("2_28uya")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.13389, 0)
 
-[node name="Cave" parent="." instance=ExtResource("2_gb8f8")]
+[node name="Cave" parent="." instance=ExtResource("3_7bs5w")]
 transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.811479, 0, -0.72888, 0, 0.0221312, 8.23622, 0.17127, 0.943399)
 
-[node name="Stalagmite" parent="." instance=ExtResource("4_d1vf4")]
+[node name="Stalagmite" parent="." instance=ExtResource("4_sahks")]
 transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.69412, 0, -0.72888, 0, 0.0221312, 0.887263, 1.56056, -35.7049)
 
-[node name="Stalagmite2" parent="." instance=ExtResource("4_d1vf4")]
+[node name="Stalagmite2" parent="." instance=ExtResource("4_sahks")]
 transform = Transform3D(0.0245869, 0, 0.65608, 0, 0.69412, 0, -0.72888, 0, 0.0221312, 6.12072, 1.56056, -35.7049)
 
 [node name="Lights" type="Node3D" parent="."]
