@@ -6,7 +6,7 @@ func idle() -> void:
 	$AnimationTree["parameters/Blend/blend_amount"] = 1
 	
 @onready
-var blob_material: StandardMaterial3D = $Skeleton3D/Cube.get_surface_override_material(0)
+var blob_material: StandardMaterial3D = %Cube.get_surface_override_material(0)
 
 @export_category("Hot/Cold")
 @export_color_no_alpha

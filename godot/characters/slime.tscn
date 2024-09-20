@@ -9,7 +9,7 @@ colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
 [sub_resource type="FastNoiseLite" id="FastNoiseLite_ca27x"]
 noise_type = 2
 frequency = 0.0428
-offset = Vector3(0, 992.842, 0)
+offset = Vector3(0, 94.9513, 0)
 
 [sub_resource type="NoiseTexture2D" id="NoiseTexture2D_reilq"]
 height = 167
@@ -42,16 +42,18 @@ node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"
 [node name="Slime" instance=ExtResource("1_lgbos")]
 script = ExtResource("2_174hs")
 hot_color = Color(1, 0, 0, 1)
+cold_color = Color(0, 0, 1, 1)
 
 [node name="Skeleton3D" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-bones/1/position = Vector3(0, -0.00986532, 0)
-bones/2/position = Vector3(0.00427308, 1.29464, -0.0537132)
+bones/1/position = Vector3(-0.11843, -0.0141351, 1.03454e-08)
+bones/2/position = Vector3(0.0265828, 1.23379, -0.0537132)
 bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
-bones/3/rotation = Quaternion(0.000118345, 9.35169e-05, 0.00448447, 0.99999)
-bones/3/scale = Vector3(1.03269, 0.907429, 1.05781)
+bones/3/rotation = Quaternion(0.000271371, 0.000201199, -0.00898579, 0.99996)
+bones/3/scale = Vector3(1.071, 0.799816, 1.12576)
 
 [node name="Cube" parent="Skeleton3D" index="0"]
+unique_name_in_owner = true
 surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
 
 [node name="AnimationTree" type="AnimationTree" parent="." index="2"]
