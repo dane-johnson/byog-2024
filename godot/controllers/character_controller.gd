@@ -8,6 +8,8 @@ var camera_rig_path
 @onready
 var camera_rig: Node3D = get_node_or_null(camera_rig_path)
 
+var hot = false
+
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector") \
 		* ProjectSettings.get_setting("physics/3d/default_gravity")
 		
@@ -34,4 +36,5 @@ func get_camera_direction() -> Basis:
 		return Basis.IDENTITY
 		
 func heat_up():
+	hot = true
 	$Slime.heat_up()

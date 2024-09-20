@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://dofw2aa5ufmyt"]
+[gd_scene load_steps=8 format=3 uid="uid://dofw2aa5ufmyt"]
 
 [ext_resource type="PackedScene" uid="uid://gposi8e81qpw" path="res://props/assets/Stalagmite.glb" id="1_60fjh"]
+[ext_resource type="Script" path="res://props/stalagmite.gd" id="2_innbs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6bj4"]
 transparency = 4
@@ -12,8 +13,69 @@ clearcoat_roughness = 0.32
 height = 7.40409
 radius = 1.0132
 
+[sub_resource type="Animation" id="Animation_uh5ga"]
+resource_name = "Melt"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 1, 0), Vector3(0, -24.3655, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector3(0, 9.77847, 0), Vector3(0, -17.207, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_iboau"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Cube:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CollisionShape3D:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector3(0, 9.77847, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_atyyh"]
+_data = {
+"Melt": SubResource("Animation_uh5ga"),
+"RESET": SubResource("Animation_iboau")
+}
+
 [node name="Stalagmite" instance=ExtResource("1_60fjh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.38403, 0)
+script = ExtResource("2_innbs")
 
 [node name="Cube" parent="." index="0"]
 transform = Transform3D(3.3708, 0, 0, 0, 3.3708, 0, 0, 0, 3.3708, 0, 1, 0)
@@ -22,3 +84,8 @@ surface_material_override/0 = SubResource("StandardMaterial3D_g6bj4")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="." index="1"]
 transform = Transform3D(3.3708, 0, 0, 0, 3.3708, 0, 0, 0, 3.3708, 0, 9.77847, 0)
 shape = SubResource("CylinderShape3D_d81fq")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." index="2"]
+libraries = {
+"": SubResource("AnimationLibrary_atyyh")
+}
