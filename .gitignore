@@ -16,3 +16,4 @@ mono_crash.*.json
 
 # Blender folder
 /BlendFiles
+/KritaFiles
