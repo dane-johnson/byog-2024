@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://6ih50i2nod3d"
-path="res://.godot/imported/FireSprite.glb-3060d1c67171f71fb25c28cb2d4bec5b.scn"
+uid="uid://ourhk23n3cjd"
+path="res://.godot/imported/icesheet.glb-57594ac1e2565c6fed075074e5aac49c.scn"
 
 [deps]
 
-source_file="res://characters/assets/FireSprite.glb"
-dest_files=["res://.godot/imported/FireSprite.glb-3060d1c67171f71fb25c28cb2d4bec5b.scn"]
+source_file="res://imports/icesheet.glb"
+dest_files=["res://.godot/imported/icesheet.glb-57594ac1e2565c6fed075074e5aac49c.scn"]
 
 [params]
 

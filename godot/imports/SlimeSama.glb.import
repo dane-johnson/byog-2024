@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cl4xtvvewoa6v"
-path="res://.godot/imported/SlimeSama.glb-494297f74e15d38a77ee4e2bda162eb1.scn"
+path="res://.godot/imported/SlimeSama.glb-5e090e5454a5819c2eebd27785f6e781.scn"
 
 [deps]
 
-source_file="res://characters/assets/SlimeSama.glb"
-dest_files=["res://.godot/imported/SlimeSama.glb-494297f74e15d38a77ee4e2bda162eb1.scn"]
+source_file="res://imports/SlimeSama.glb"
+dest_files=["res://.godot/imported/SlimeSama.glb-5e090e5454a5819c2eebd27785f6e781.scn"]
 
 [params]
 

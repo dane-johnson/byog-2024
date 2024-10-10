@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://bsn8e6k2iyste"]
 
-[ext_resource type="Script" path="res://levels/main.gd" id="1_pjcw3"]
-[ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://player/player_rig.tscn" id="2_28uya"]
-[ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://levels/first_room.tscn" id="3_7bs5w"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_pjcw3"]
+[ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://props/player_rig.tscn" id="2_28uya"]
+[ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://props/first_room.tscn" id="3_7bs5w"]
 [ext_resource type="PackedScene" uid="uid://dofw2aa5ufmyt" path="res://props/stalagmite.tscn" id="4_sahks"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tcorm"]

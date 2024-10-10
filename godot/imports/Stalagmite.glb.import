@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://cpdrule0xwav4"
-path="res://.godot/imported/FirstRoom.glb-a29da5a22826726e25ebeca115e3d2ac.scn"
+uid="uid://gposi8e81qpw"
+path="res://.godot/imported/Stalagmite.glb-fd12b97330107b49cff23536d6cd20f7.scn"
 
 [deps]
 
-source_file="res://levels/assets/FirstRoom.glb"
-dest_files=["res://.godot/imported/FirstRoom.glb-a29da5a22826726e25ebeca115e3d2ac.scn"]
+source_file="res://imports/Stalagmite.glb"
+dest_files=["res://.godot/imported/Stalagmite.glb-fd12b97330107b49cff23536d6cd20f7.scn"]
 
 [params]
 
