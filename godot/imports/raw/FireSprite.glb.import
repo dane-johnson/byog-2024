@@ -3,17 +3,17 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://gposi8e81qpw"
-path="res://.godot/imported/Stalagmite.glb-fd12b97330107b49cff23536d6cd20f7.scn"
+uid="uid://6ih50i2nod3d"
+path="res://.godot/imported/FireSprite.glb-ed57ab247995d9072c1cf21e7175ac4c.scn"
 
 [deps]
 
-source_file="res://imports/Stalagmite.glb"
-dest_files=["res://.godot/imported/Stalagmite.glb-fd12b97330107b49cff23536d6cd20f7.scn"]
+source_file="res://imports/raw/FireSprite.glb"
+dest_files=["res://.godot/imported/FireSprite.glb-ed57ab247995d9072c1cf21e7175ac4c.scn"]
 
 [params]
 
-nodes/root_type="StaticBody3D"
+nodes/root_type=""
 nodes/root_name=""
 nodes/apply_root_scale=true
 nodes/root_scale=1.0

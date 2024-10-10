@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://dofw2aa5ufmyt"]
 
-[ext_resource type="PackedScene" uid="uid://gposi8e81qpw" path="res://imports/Stalagmite.glb" id="1_60fjh"]
+[ext_resource type="PackedScene" uid="uid://gposi8e81qpw" path="res://imports/raw/Stalagmite.glb" id="1_60fjh"]
 [ext_resource type="Script" path="res://scripts/stalagmite.gd" id="2_innbs"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_g6bj4"]

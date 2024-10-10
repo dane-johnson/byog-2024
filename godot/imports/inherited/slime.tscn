@@ -1,6 +1,6 @@
 [gd_scene load_steps=11 format=3 uid="uid://c13gk07m8ijaw"]
 
-[ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://imports/SlimeSama.glb" id="1_lgbos"]
+[ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://imports/raw/SlimeSama.glb" id="1_lgbos"]
 [ext_resource type="Script" path="res://scripts/slime.gd" id="2_174hs"]
 
 [sub_resource type="Gradient" id="Gradient_chkps"]

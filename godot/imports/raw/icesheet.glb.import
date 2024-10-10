@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://ourhk23n3cjd"
-path="res://.godot/imported/icesheet.glb-57594ac1e2565c6fed075074e5aac49c.scn"
+path="res://.godot/imported/icesheet.glb-f45f7eeaae23e76866e6039c0a703b96.scn"
 
 [deps]
 
-source_file="res://imports/icesheet.glb"
-dest_files=["res://.godot/imported/icesheet.glb-57594ac1e2565c6fed075074e5aac49c.scn"]
+source_file="res://imports/raw/icesheet.glb"
+dest_files=["res://.godot/imported/icesheet.glb-f45f7eeaae23e76866e6039c0a703b96.scn"]
 
 [params]
 

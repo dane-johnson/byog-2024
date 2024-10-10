@@ -4,12 +4,12 @@ importer="scene"
 importer_version=1
 type="PackedScene"
 uid="uid://cpdrule0xwav4"
-path="res://.godot/imported/FirstRoom.glb-86f9386e2bd37bf22c7f06fc1d9eefb0.scn"
+path="res://.godot/imported/FirstRoom.glb-176e42154bc39500e93ffe5c2521280e.scn"
 
 [deps]
 
-source_file="res://imports/FirstRoom.glb"
-dest_files=["res://.godot/imported/FirstRoom.glb-86f9386e2bd37bf22c7f06fc1d9eefb0.scn"]
+source_file="res://imports/raw/FirstRoom.glb"
+dest_files=["res://.godot/imported/FirstRoom.glb-176e42154bc39500e93ffe5c2521280e.scn"]
 
 [params]
 
