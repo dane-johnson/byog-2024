@@ -2,6 +2,8 @@ extends CharacterBody3D
 
 @export
 var speed = 1.0
+@export
+var turn_speed = 1.0
 
 @export_node_path("Node3D")
 var camera_rig_path
@@ -13,13 +15,18 @@ var hot = false
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity_vector") \
 		* ProjectSettings.get_setting("physics/3d/default_gravity")
 		
-func _process(_delta: float) -> void:
+func _process(delta: float) -> void:
 	if velocity != Vector3.ZERO:
+		$Slime.transform = interpolate_towards_velocity($Slime.transform, delta)
 		$Slime.move()
-		$Slime.look_at(position + velocity) ## TODO interpolate
 	else:
 		$Slime.idle()
 	
+func interpolate_towards_velocity(transform: Transform3D, delta: float) -> Transform3D:
+	if (velocity * Vector3(1.0, 0.0, 1.0)).is_zero_approx():
+		return transform
+	else:
+		return transform.interpolate_with(transform.looking_at(transform.origin + velocity), delta * turn_speed)
 
 func _physics_process(delta: float) -> void:
 	var inputs = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
