@@ -22,11 +22,11 @@ func _process(delta: float) -> void:
 	else:
 		$Slime.idle()
 	
-func interpolate_towards_velocity(transform: Transform3D, delta: float) -> Transform3D:
+func interpolate_towards_velocity(xform: Transform3D, delta: float) -> Transform3D:
 	if (velocity * Vector3(1.0, 0.0, 1.0)).is_zero_approx():
-		return transform
+		return xform
 	else:
-		return transform.interpolate_with(transform.looking_at(transform.origin + velocity), delta * turn_speed)
+		return xform.interpolate_with(xform.looking_at(xform.origin + velocity), delta * turn_speed)
 
 func _physics_process(delta: float) -> void:
 	var inputs = Input.get_vector("move_left", "move_right", "move_forward", "move_back")
