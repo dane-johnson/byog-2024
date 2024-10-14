@@ -1,6 +1,5 @@
-[gd_scene load_steps=10 format=3 uid="uid://bsn8e6k2iyste"]
+[gd_scene load_steps=9 format=3 uid="uid://bsn8e6k2iyste"]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_pjcw3"]
 [ext_resource type="PackedScene" uid="uid://bmf7vjtvb6jc8" path="res://props/player_rig.tscn" id="2_28uya"]
 [ext_resource type="PackedScene" uid="uid://4uipdbe478lb" path="res://imports/inherited/first_room.tscn" id="3_7bs5w"]
 [ext_resource type="PackedScene" uid="uid://dofw2aa5ufmyt" path="res://props/stalagmite.tscn" id="4_sahks"]
@@ -22,7 +21,6 @@ size = Vector3(14.7021, 8.37, 15.4965)
 size = Vector3(4.2334, 11.4777, 16.1746)
 
 [node name="Level1" type="Node3D"]
-script = ExtResource("1_pjcw3")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_7ok4j")
@@ -106,6 +104,3 @@ collision_mask = 2
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Triggers/MeltZone"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.6167, 5.23883, 0.539185)
 shape = SubResource("BoxShape3D_v6sac")
-
-[connection signal="body_entered" from="Triggers/HotZone" to="." method="on_enter_hot_zone"]
-[connection signal="body_entered" from="Triggers/MeltZone" to="." method="on_melt_zone_body_entered"]

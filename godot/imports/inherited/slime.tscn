@@ -1,7 +1,7 @@
-[gd_scene load_steps=11 format=3 uid="uid://c13gk07m8ijaw"]
+[gd_scene load_steps=14 format=3 uid="uid://c13gk07m8ijaw"]
 
 [ext_resource type="PackedScene" uid="uid://cl4xtvvewoa6v" path="res://imports/raw/SlimeSama.glb" id="1_lgbos"]
-[ext_resource type="Script" path="res://scripts/slime.gd" id="2_174hs"]
+[ext_resource type="Script" path="res://scripts/effects/slime.gd" id="2_174hs"]
 
 [sub_resource type="Gradient" id="Gradient_chkps"]
 colors = PackedColorArray(1, 1, 1, 0.819608, 1, 1, 1, 1)
@@ -30,7 +30,7 @@ animation = &"SlimeIdle"
 animation = &"Movement"
 
 [sub_resource type="AnimationNodeBlendTree" id="AnimationNodeBlendTree_w14uk"]
-graph_offset = Vector2(-446, 34.6667)
+graph_offset = Vector2(-522.276, 15.2066)
 nodes/Blend/node = SubResource("AnimationNodeBlend2_i6yce")
 nodes/Blend/position = Vector2(93.3333, 146.667)
 nodes/Idle/node = SubResource("AnimationNodeAnimation_172as")
@@ -39,6 +39,25 @@ nodes/Move/node = SubResource("AnimationNodeAnimation_c6paj")
 nodes/Move/position = Vector2(-226.667, 80)
 node_connections = [&"Blend", 0, &"Move", &"Blend", 1, &"Idle", &"output", 0, &"Blend"]
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_anei7"]
+shading_mode = 0
+specular_mode = 1
+vertex_color_use_as_albedo = true
+billboard_mode = 3
+particles_anim_h_frames = 1
+particles_anim_v_frames = 1
+particles_anim_loop = false
+grow_amount = 1.008
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_rwsp6"]
+material = SubResource("StandardMaterial3D_anei7")
+size = Vector2(0.1, 0.1)
+orientation = 2
+
+[sub_resource type="Gradient" id="Gradient_c02d1"]
+offsets = PackedFloat32Array(0.106667, 0.24, 0.586667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.864, 0.96, 0, 1, 0.59, 0, 0, 1, 0, 0, 0, 1)
+
 [node name="Slime" instance=ExtResource("1_lgbos")]
 script = ExtResource("2_174hs")
 hot_color = Color(1, 0, 0, 1)
@@ -46,11 +65,11 @@ cold_color = Color(0, 0, 1, 1)
 
 [node name="Skeleton3D" parent="." index="0"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
-bones/1/position = Vector3(-0.11843, -0.0141351, 1.03454e-08)
-bones/2/position = Vector3(0.0265828, 1.23379, -0.0537132)
+bones/1/position = Vector3(-0.0575752, 0.187129, 1.58223e-08)
+bones/2/position = Vector3(0.0735966, 1.3539, -0.0537132)
 bones/2/rotation = Quaternion(-0.0614422, 1.28518e-17, 1.28518e-17, 0.998111)
-bones/3/rotation = Quaternion(0.000271371, 0.000201199, -0.00898579, 0.99996)
-bones/3/scale = Vector3(1.071, 0.799816, 1.12576)
+bones/3/rotation = Quaternion(2.16989e-05, 1.66486e-05, 0.0673391, 0.99773)
+bones/3/scale = Vector3(0.922141, 1.25323, 0.869794)
 
 [node name="Cube" parent="Skeleton3D" index="0"]
 unique_name_in_owner = true
@@ -60,3 +79,22 @@ surface_material_override/0 = SubResource("StandardMaterial3D_iudju")
 tree_root = SubResource("AnimationNodeBlendTree_w14uk")
 anim_player = NodePath("../AnimationPlayer")
 parameters/Blend/blend_amount = 1.0
+
+[node name="Sparks" type="CPUParticles3D" parent="." index="3"]
+emitting = false
+amount = 30
+fract_delta = false
+mesh = SubResource("PlaneMesh_rwsp6")
+emission_shape = 6
+emission_ring_axis = Vector3(0, 0, 1)
+emission_ring_height = 1.0
+emission_ring_radius = 1.0
+emission_ring_inner_radius = 0.0
+direction = Vector3(0, 1, 0)
+initial_velocity_min = 10.0
+initial_velocity_max = 10.0
+angular_velocity_min = -229.81
+angular_velocity_max = 606.94
+linear_accel_min = -3.0
+linear_accel_max = 3.0
+color_ramp = SubResource("Gradient_c02d1")

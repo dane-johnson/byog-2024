@@ -24,6 +24,7 @@ func _ready() -> void:
 func heat_up() -> void:
 	var hot_tween = create_tween()
 	hot_tween.tween_property(blob_material, "albedo_color", hot_color, 1)
+	$Sparks.emitting = true
 	
 func cool_down() -> void:
 	var cold_tween = create_tween()
